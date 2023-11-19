@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Stage, Sprite, Container } from "@pixi/react";
-import heroImage from "./assets/sprites/hero/frame-1.png";
 import bgImage from "./assets/sprites/stageBackground/full-background.png";
+import AnimatedSpriteComponent from "./components/AnimatedSpriteComponent";
 
 const App = () => {
   const stageRef = useRef(null);
@@ -45,13 +45,9 @@ const App = () => {
         />
 
         {/* Hero sprite */}
-        <Sprite
-          image={heroImage}
-          x={windowDimensions.width / 2}
-          y={windowDimensions.height / 2}
-          width={100}
-          height={70}
-          anchor={{ x: 0.5, y: 0.5 }}
+        <AnimatedSpriteComponent
+          xPropPos={windowDimensions.width / 2}
+          yPropPos={windowDimensions.height / 2}
         />
       </Container>
     </Stage>
